@@ -1,0 +1,14 @@
+Best parameters:{'M': 8, 'N': 12, 'delta': 0, 'flags': False}
+Best cross-validation score: 0.86
+              precision    recall  f1-score   support
+
+       beat3       0.50      0.25      0.33         4
+       beat4       0.67      0.50      0.57         4
+      circle       1.00      1.00      1.00         4
+       eight       1.00      1.00      1.00         4
+         inf       0.50      1.00      0.67         4
+        wave       1.00      0.75      0.86         4
+
+    accuracy                           0.75        24
+   macro avg       0.78      0.75      0.74        24
+weighted avg       0.78      0.75      0.74        24
