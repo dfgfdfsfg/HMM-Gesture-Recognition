@@ -117,7 +117,6 @@ class LH_HMM(BaseEstimator, ClassifierMixin):
         cluster_centers = self.kmeans_(path)
         data = cluster_centers.T
         ans = [data]
-        ans1 = []
         diff_1 = []
         diff_2 = []
         if self.delta >= 1:
@@ -125,12 +124,10 @@ class LH_HMM(BaseEstimator, ClassifierMixin):
                 diff = np.diff(line, prepend=line[0])
                 diff_1.append(diff)
             ans.append(diff_1)
-            ans1.append(diff_1)
         if self.delta >= 2:
             for line in diff_1:
                 diff = np.diff(line, prepend=line[0])
                 diff_2.append(diff)
             ans.append(diff_2)
-            ans1.append(diff_2)
         # print(ans)
-        return np.transpose(np.concatenate(ans1, axis=0), [1, 0])
+        return np.transpose(np.concatenate(ans, axis=0), [1, 0])
